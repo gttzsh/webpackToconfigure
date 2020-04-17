@@ -15,7 +15,9 @@ module.exports = smart(webpackCommonConf, {
   //一个入口
   output: {
     filename: 'bundle.[contentHash:8].js', //打包时，加上 hash,每次打包文件名不一致,如果文件没变，就命中缓存，运行会更快
-    path: distPath
+    path: distPath,
+    //修改所有静态url前缀
+    // publicPath: 'http://cdn.abc.com'
   },
   //多个入口
   //output: {
@@ -38,7 +40,7 @@ module.exports = smart(webpackCommonConf, {
             outputPath: '/imgOut/',
 
             //设置图片的cdn 地址
-            //publicPath: 'http://cdn.abc.com'
+            // publicPath: 'http://cdn.abc.com'
           }
         }
       },
